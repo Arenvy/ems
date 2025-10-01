@@ -16,7 +16,7 @@
       <!-- Top Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand fw-bold" href="#">MyApp</a>
+          <a class="navbar-brand fw-bold" href="#">Employee Dashboard</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,13 +28,20 @@
                   <i class="bi bi-person-circle"></i> Profile
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li>
-                    <form method="POST" action="{{ route('user.logout') }}">
-                        @csrf
-                        <button type="submit">Logout</button>
-                    </form>
-                  </li>
+                  <div class="d-flex align-items-center p-2">
+                    <li class="mx-1">
+                      <form method="POST" action="{{ route('user.logout') }}">
+                          @csrf
+                          <button class="btn btn-outline-primary btn-sm w-80" type="submit">Settings</button>
+                      </form>
+                    </li>
+                    <li class="mx-1">
+                      <form method="POST" action="{{ route('user.logout') }}">
+                          @csrf
+                          <button class="btn btn-outline-danger btn-sm w-80" type="submit">Logout</button>
+                      </form>
+                    </li>
+                  </div>
                 </ul>
               </li>
             </ul>
